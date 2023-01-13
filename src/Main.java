@@ -1,19 +1,19 @@
 import java.util.Scanner; // Импортируем из покета util класс Scanner, для ввода в консоль с клавиатуры
 
-public class Calculator {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String zadacha = scanner.nextLine();
         zadacha = zadacha.replace(" ",""); // Удаляем пробелы, т.к. не понятно из тз, должен быть 1 или несколько, + при вводе можно ошибиться
         try {
-            Calculator f = new Calculator();
+            Main f = new Main();
             System.out.println(f.calc(zadacha));
         } catch (ThrowException e) {
             System.out.println(e.getMessage());
         }
     }
     String calc (String input) throws ThrowException {
-        Calculator reshenie = new Calculator();
+        Main reshenie = new Main();
         byte [] informaciya = reshenie.informaciya(input); // Собираем начальную информацию о строке введенной с клавиатуры
         if (informaciya[2] == 1) { // Путь если задание в римских числах
             input = reshenie.perevodRimArab(input, informaciya); // Переводим римское число в арабское
